@@ -19,13 +19,14 @@ public class ProdutoResource {
 	@Autowired
 	ProdutoRepository produtoRepository;
 	
+	//esse metodo lista todos os produtos
 	@GetMapping("/produtos")
 	public List<Produto> listaProdutos(){
 		return produtoRepository.findAll();
 	}
-	
+	//esse aqui lista um produto unico
 	@GetMapping("/produto/{id}")
 	public Produto listaProdutoUnico(@PathVariable(value="id") long id){
-		return produtoRepository.findById(id);
+		return produtoRepository.findById(id); 
 	}
 }
